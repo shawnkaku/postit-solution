@@ -1,0 +1,14 @@
+<div class='well'>
+  <%= form_for post do |f| %>
+    <%= f.label :title, "主旨："%>
+    <%= f.text_field :title %><br />
+
+    <%= f.label :url, "網址：" %>
+    <%= f.text_field :url %><br />
+
+    <%= f.label :description, "說明：" %>
+    <%= f.text_field :description %><br />
+
+    <%= f.submit(post.new_record? ? 'Create Post.' : 'Edit Post.', class: 'btn btn-primary') %>
+  <% end %>
+</div>
