@@ -1,0 +1,8 @@
+<div class='well'>
+  <%= form_for category do |f| %>
+    <%= f.label :name, "分類名稱："%>
+    <%= f.text_field :name %><br />
+
+    <%= f.submit(category.new_record? ? 'Create Category.' : 'Edit Category.', class: 'btn btn-primary') %>
+  <% end %>
+</div>
