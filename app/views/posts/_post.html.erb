@@ -3,7 +3,7 @@
     <p><%= render post.categories %></p>
     <span class="lead"> <%= link_to post.title, post_path(post) %> </span></br>
     <%= post.description %> </br>
-    Learn more >> <%= link_to post.url, post.url %> </br>
+    Learn more >> <%= link_to fix_url(post.url), fix_url(post.url) %> </br>
     Created by: <%= post.user.username %>.
     There are <%= post.comments.size %> comments! </br>
     Created at: <%= post.created_at %>.
