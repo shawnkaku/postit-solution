@@ -1,6 +1,27 @@
 <p class='pull-right'>
-  [<%= link_to "Edit the post.", edit_post_path %>]
+  [<%= link_to "Edit the post.", edit_post_path(@post) %>]
 </p>
+
 <%= render "shared/content_title", title: @post.title %>
 
-<%= render @post %>
+<%= render 'comments/form', post: @post, comment: @comment %>
+<hr>
+
+<p>
+  <%= render @post %>
+</p>
+
+<p>
+  <h4>Comments:</h4>
+  <hr>
+  <% @comments.each do |ct| %>
+    <%= render "comments/comment", ct: ct %>
+  <% end %>
+</p>
+
+
+
+
+
+
+
