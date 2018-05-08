@@ -1,4 +1,6 @@
-<%= render 'shared/content_title', title: "Edit post!" %>
+<% if logged_in? %>
+  <%= render 'shared/content_title', title: "Edit post!" %>
+<% end %>
 
 <%= render 'shared/error', errors: @post.errors %>
 

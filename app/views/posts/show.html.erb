@@ -1,11 +1,15 @@
-<p class='pull-right'>
-  [<%= link_to "Edit the post.", edit_post_path(@post) %>]
-</p>
+<% if logged_in? %>
+  <p class='pull-right'>
+    [<%= link_to "Edit the post.", edit_post_path(@post) %>]
+  </p>
+<% end %>
 
 <%= render "shared/content_title", title: @post.title %>
 
-<%= render 'comments/form', post: @post, comment: @comment %>
-<hr>
+<% if logged_in? %>
+  <%= render 'comments/form', post: @post, comment: @comment %>
+  <hr>
+<% end %>
 
 <p>
   <%= render @post %>
@@ -18,10 +22,3 @@
     <%= render "comments/comment", ct: ct %>
   <% end %>
 </p>
-
-
-
-
-
-
-

@@ -4,4 +4,10 @@ PostitTemplate::Application.routes.draw do
     resources :comments
   end
   resources :categories, only: [:new, :create, :show]
+
+  get '/login', to: 'sessions#new'
+  post '/login', to: 'sessions#create'
+  get '/logout', to: 'sessions#destroy'
+
+  resources :sessions
 end

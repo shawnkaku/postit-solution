@@ -1,4 +1,6 @@
-<%= render 'shared/content_title', title: "New Category!" %>
+<% if logged_in? %>
+  <%= render 'shared/content_title', title: "New Category!" %>
+<% end %>
 
 <%= render 'shared/error', errors: @category.errors %>
 

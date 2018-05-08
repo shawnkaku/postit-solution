@@ -1,4 +1,6 @@
-<%= render 'shared/content_title', title: "New Comment!" %>
+<% if logged_in? %>
+  <%= render 'shared/content_title', title: "New Comment!" %>
+<% end %>
 
 <%= render 'shared/error', errors: @comment.errors %>
 
