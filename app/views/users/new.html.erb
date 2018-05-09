@@ -1,0 +1,7 @@
+<% if !logged_in? %>
+  <%= render 'shared/content_title', title: "Register!" %>
+<% end %>
+
+<%= render 'shared/error', errors: @user.errors %>
+
+<%= render 'form', user: @user %>
