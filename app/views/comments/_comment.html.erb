@@ -1,6 +1,10 @@
+<% show_post ||= false %>
 <p>
   <div class="span6 well">
     <%= ct.body %> </br>
+    <% if show_post %>
+      on: <%= link_to ct.post.title, post_path(ct.post) %> </br>
+    <% end %>
     Created by: <%= ct.user.username %>.
     Created at: <%= ct.created_at %>.
   </div>
