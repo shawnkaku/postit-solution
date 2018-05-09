@@ -1,5 +1,16 @@
-<p>
-  <div class="well">
+<div class="row">
+  <div class="span0 well text-center">
+    <%= link_to vote_post_path(post, vote: true), method: 'post' do %>
+      <i class='icon-arrow-up'></i>
+    <% end %>
+     <br/>
+    <%= "#{post.vote_total} votes" %>
+    <br/>
+    <%= link_to vote_post_path(post, vote: false), method: 'post' do %>
+      <i class='icon-arrow-down'></i>
+    <% end %>
+  </div>
+  <div class="span8 well">
     <p><%= render post.categories %></p>
     <span class="lead"> <%= link_to post.title, post_path(post) %> </span></br>
     <%= post.description %> </br>
@@ -8,4 +19,4 @@
     There are <%= post.comments.size %> comments! </br>
     Created at: <%= display_datetime(post.created_at) %>.
   </div>
-</p>
+</div>

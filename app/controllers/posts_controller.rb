@@ -1,10 +1,10 @@
 class PostsController < ApplicationController
-  before_action :set_post, only: [:show, :update, :destroy, :edit]
+  before_action :set_post, only: [:show, :update, :destroy, :edit, :vote]
   before_action :require_user?, except: [:index, :show]
   # before_action :require_same_user, only: [:edit, :update]
 
   def index
-    @posts = Post.all
+    @posts = Post.all.sort_by{|x| x.vote_total}.reverse
   end
 
   def show
@@ -30,9 +30,7 @@ class PostsController < ApplicationController
   end
 
   def edit
-
   end
-
   def update
     if @post.update(post_params)
       flash[:notice] = "The post has been updated."
@@ -44,7 +42,16 @@ class PostsController < ApplicationController
   end
 
   def destroy
+  end
 
+  def vote
+    @vote = Vote.create(voteable: @post, user_id: current_user.id, vote: params[:vote])
+    if @vote.valid?
+      flash[:notice] = "Your vote was counted."
+    else
+      flash[:error] = "Your vote was not counted."
+    end
+    redirect_to :back
   end
 
   private
