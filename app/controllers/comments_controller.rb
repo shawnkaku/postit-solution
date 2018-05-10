@@ -21,12 +21,18 @@ class CommentsController < ApplicationController
   end
   def vote
     @vote = Vote.create(voteable: @comment, user_id: current_user.id, vote: params[:vote])
-    if @vote.valid?
-      flash[:notice] = "Your vote was counted."
-    else
-      flash[:error] = "Your vote was not counted."
+
+    respond_to do |format|
+      format.html do
+        if @vote.valid?
+          flash[:notice] = "Your vote was counted."
+        else
+          flash[:error] = "Your vote was not counted."
+        end
+        redirect_to :back
+      end
+      format.js
     end
-    redirect_to :back
   end
 
   private
