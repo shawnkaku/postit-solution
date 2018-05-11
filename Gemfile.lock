@@ -27,6 +27,7 @@ GEM
       tzinfo (~> 0.3.37)
     arel (4.0.0)
     atomic (1.1.10)
+    babosa (1.0.2)
     bcrypt-ruby (3.0.1)
     bootstrap-sass (2.3.2.0)
       sass (~> 3.2)
@@ -42,6 +43,8 @@ GEM
     erubis (2.7.0)
     execjs (1.4.0)
       multi_json (~> 1.0)
+    friendly_id (5.1.0)
+      activerecord (>= 4.0.0)
     hike (1.2.3)
     i18n (0.6.4)
     jbuilder (1.4.2)
@@ -127,9 +130,11 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  babosa
   bcrypt-ruby (~> 3.0.0)
   bootstrap-sass (~> 2.3.2.0)
   coffee-rails (~> 4.0.0)
+  friendly_id (~> 5.1.0)
   jbuilder (~> 1.2)
   jquery-rails
   pg
