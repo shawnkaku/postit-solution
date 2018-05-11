@@ -17,10 +17,7 @@ class Post < ActiveRecord::Base
     slug.blank? || id_changed? # slug 為 nil 或 name column 變更時更新
   end
   def slug_candidates
-    [
-      :id,
-      [:id, :title]
-    ]
+    [ :id, [:id, :title]]
   end
   def vote_total
     vote_up - vote_down

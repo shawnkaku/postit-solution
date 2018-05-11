@@ -11,11 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180511035824) do
+ActiveRecord::Schema.define(version: 20180511074316) do
 
   create_table "categories", force: true do |t|
     t.string "name"
+    t.string "slug"
   end
+
+  add_index "categories", ["slug"], name: "index_categories_on_slug", unique: true
 
   create_table "comments", force: true do |t|
     t.text     "body"
@@ -23,7 +26,10 @@ ActiveRecord::Schema.define(version: 20180511035824) do
     t.integer  "post_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "slug"
   end
+
+  add_index "comments", ["slug"], name: "index_comments_on_slug", unique: true
 
   create_table "friendly_id_slugs", force: true do |t|
     t.string   "slug",                      null: false
@@ -60,7 +66,10 @@ ActiveRecord::Schema.define(version: 20180511035824) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "password_digest"
+    t.string   "slug"
   end
+
+  add_index "users", ["slug"], name: "index_users_on_slug", unique: true
 
   create_table "votes", force: true do |t|
     t.boolean  "vote"
