@@ -29,7 +29,7 @@ GEM
       tzinfo (~> 1.1)
     arel (5.0.1.20140414130214)
     babosa (1.0.2)
-    bcrypt-ruby (3.0.1)
+    bcrypt (3.1.11)
     bootstrap-sass (2.3.2.2)
       sass (~> 3.2)
     builder (3.2.3)
@@ -134,10 +134,10 @@ PLATFORMS
 
 DEPENDENCIES
   babosa
-  bcrypt-ruby (~> 3.0.0)
+  bcrypt
   bootstrap-sass (~> 2.3.2.0)
   coffee-rails (~> 4.0.0)
-  friendly_id (~> 5.1.0)
+  friendly_id
   jbuilder (~> 1.2)
   jquery-rails
   pg

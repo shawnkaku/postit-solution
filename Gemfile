@@ -12,8 +12,10 @@ gem 'bootstrap-sass', '~> 2.3.2.0'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
-gem 'bcrypt-ruby', '~> 3.0.0'
-gem 'friendly_id', '~> 5.1.0'
+# gem 'bcrypt-ruby', '~> 3.0.0'
+gem 'bcrypt'
+# gem 'friendly_id', '~> 5.1.0'
+gem 'friendly_id'
 gem 'babosa'
 
 group :doc do
