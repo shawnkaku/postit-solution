@@ -22,6 +22,9 @@ class User < ActiveRecord::Base
   def slug_candidates
     [:id,  [:id, :username]]
   end
+  def admin?
+    self.role.to_s.to_sym == :admin
+  end
 
   validates :username, presence: true, uniqueness: true
   validates :password, presence: true, on: :create, length: {minimum: 5}
